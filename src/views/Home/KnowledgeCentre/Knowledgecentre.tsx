@@ -1,4 +1,3 @@
-import React from 'react';
 import './Knowledgecentre.css';
 
 // 1. Move interfaces and static data outside the rendering functions
