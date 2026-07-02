@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import "./HeroSection.css";
+import "./Herosection.css";
 
 export default function HeroSection() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
