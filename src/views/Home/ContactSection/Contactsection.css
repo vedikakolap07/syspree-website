@@ -1,3 +1,121 @@
+/* ==========================================
+   NEW UNIQUE TESTIMONIAL STYLES (ct- prefix)
+   ========================================== */
+
+.ct-testimonial-section {
+    text-align: center;
+    padding: 60px 50px; 
+    max-width: 1680px;  
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-image: url('src/assets/honeycomb.png'); 
+    background-position: center;   
+    background-repeat: no-repeat;  
+    background-size: cover;
+    border-radius: 12px;
+}
+
+.ct-testimonial-subtitle {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #ff7a00;
+    margin-bottom: 5px;
+}
+
+.ct-testimonial-heading {
+    font-size: 26px;
+    font-family: 'Georgia', serif;
+    color: #111;
+    max-width: 1000px; 
+    margin: 0 auto 50px auto;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+.ct-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 20px;          
+    width: 100%;        
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ct-testimonial-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 40px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+    max-width: 650px;
+    width: 100%;
+}
+
+.ct-testimonial-text {
+    font-family: sans-serif;
+    font-style: italic;
+    font-size: 16px;    
+    line-height: 1.5;   
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ct-client-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ct-client-logo {
+    height: 36px;
+    object-fit: contain;
+}
+
+.ct-client-name {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+
+.ct-nav-arrow {
+    background: none;
+    border: none;
+    font-size: 55px;   
+    color: #ff9800;
+    cursor: pointer;
+    padding: 15px;
+    transition: transform 0.2s ease, color 0.2s;
+    flex-shrink: 0;    
+}
+
+.ct-pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px; 
+}
+
+.ct-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.ct-dot.ct-active {
+    background-color: #ff7a00;
+}
+
+
+/* ==========================================
+   CONTACT SECTION STYLES
+   ========================================== */
+
 .contact-section{
     max-width:1680px;
     margin:120px auto;
@@ -22,8 +140,9 @@
     font-weight:700;
     margin-bottom:55px;
 }
+
 .top-line {
-    display: block;       
+    display: block;      
     width: 100%;
     height: 2px;          
     background-color: #ff7a00;
@@ -80,25 +199,23 @@
 .contact-form button{
     display:block;
     margin:0 auto;
-
     width:250px;
     height:62px;
-
     border:none;
     border-radius:40px;
-
     background:#ff9800;
     color:#fff;
-
     font-size:26px;
     font-family:"Georgia",serif;
     cursor:pointer;
-
     transition:.3s;
 }
 
 
-/* Core structure for the Office section layout */
+/* ==========================================
+   OFFICE SECTION STYLES
+   ========================================== */
+
 .office-section {
     max-width: 1680px;
     margin: 80px auto 120px;
@@ -137,7 +254,6 @@
     margin: 30px 0 18px;
 }
 
-
 .info {
   display: flex !important;
   flex-direction: row !important;     
@@ -168,7 +284,7 @@
   padding: 0 !important;
   line-height: 1.5 !important;
   color: #333 !important;
-    font-size: 16px !important;
+  font-size: 16px !important;
 }
 
 .office-card hr {
@@ -183,104 +299,3 @@
     background: #ff8a00;
     margin: 38px 0;
 }
-
-
-.testimonial-section {
-  text-align: center;
-  padding: 60px 50px; 
-  max-width: 1680px;  
-  margin: 0 auto;
-  box-sizing: border-box;
-
-  background-image: url('src/assets/honeycomb.png'); 
-    background-position: center;   
-    background-repeat: no-repeat;  
-    border-radius: 12px;
-  
-}
-
-.testimonial-section h2 {
-  font-size: 26px;
-  font-family: 'Georgia', serif;
-  color: #111;
-  max-width: 1000px; 
-  margin: 0 auto 50px auto;
-  line-height: 1.4;
-  font-weight: normal;
-}
-
-.carousel-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  gap: 40px;          
-  width: 100%;        
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.testimonial-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 5px 40px; 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
-  flex: 1;            
-  width: 100%;
-}
-
-
-.testimonial-text {
-  font-family: sans-serif;
-  font-style: italic;
-  font-size: 16px;    
-  line-height: 1.5;   
-  color: #444;
-  margin-bottom: 20px;
-  text-align: center;
-  max-width: 100%;    
-  width: 100%;
-}
-.testimonial-subtitle {
-  font-family: Georgia, serif;
-  font-size: 16px;
-  color: #ff7a00;
-  margin-bottom: 5px;
-}
-
-.pagination-dots {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 25px; 
-}
-.client-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-}
-
-.client-logo {
-  height: 36px;
-  object-fit: contain;
-}
-
-.client-name {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: #000;
-}
-
-.nav-arrow {
-  background: none;
-  border: none;
-  font-size: 55px;   
-  color: #ff9800;
-  cursor: pointer;
-  padding: 15px;
-  transition: transform 0.2s ease, color 0.2s;
-  flex-shrink: 0;    
-}
-

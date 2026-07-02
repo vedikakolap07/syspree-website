@@ -8,7 +8,6 @@
   background: #ffffff;
   padding: 60px 0 0 0;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .testimonial-title {
@@ -22,105 +21,112 @@
   text-transform: uppercase;
 }
 
-/* ========================================================= */
-/* FULL WIDTH TRACK BLOCK                                    */
-/* ========================================================= */
-.testimonial-slider-fullwidth {
+/* Fixed container block matching SySpree dimensions */
+.testimonial-slider-container {
   position: relative;
-  background: #ff8a00; /* Matching the orange banner background color */
+  background: #ff8a00;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   padding: 45px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 400px;
+  overflow: hidden; /* Ensures 4th/5th staging cards remain completely invisible */
 }
 
-/* 3D Viewport Parent Setup */
-.cards-viewport-3d {
-  display: flex;
+/* Viewport anchor holding layout coordinates with 3D Depth perspective */
+.cards-viewport {
+  position: relative;
   width: 100%;
-  max-width: 1300px;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  /* This activates true coordinate depth calculation */
-  perspective: 1200px; 
+  max-width: 1400px; 
+  height: 100%;
+  margin: 0 auto;
+  perspective: 1200px; /* Activates 3D depth calculations */
   transform-style: preserve-3d;
 }
 
-/* ========================================================= */
-/* CARD WRAPPERS & TRUE PERSPECTIVE ROTATIONS                */
-/* ========================================================= */
-.card-perspective-wrapper {
-  width: 380px;
-  position: relative;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
-  will-change: transform, opacity;
-  z-index: 1;
+/* ================================================================= */
+/* SINGLE-SOURCE ANCHOR ENGINE (RESPONSIVE VIEWPORT BOUNDS)           */
+/* ================================================================= */
+.testimonial-card {
+  position: absolute;
+  top: 50%;
+  left: 50%; /* All elements are anchored at center to avoid left/right styling collision */
+  
+  /* Responsive landscape aspect ratio scaled directly to the screen width */
+  width: 28vw;
+  max-width: 440px;
+  min-width: 320px;
+  aspect-ratio: 16 / 9;
+  
+  transform-origin: center center;
+  
+  /* Pure transform animations to handle smooth transitions and z-index ordering */
+  transition: transform 0.7s ease-in-out, z-index 0.7s step-end;
+  will-change: transform;
 }
 
-.card-inner-frame {
+.card-inner {
   background: #ffffff;
-  padding: 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  position: relative;
-  overflow: hidden;
+  padding: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  width: 100%;
+  height: 100%;
 }
 
-.card-inner-frame img {
+.card-inner img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-/* Edge Fade Overlay Layer */
-.edge-fade-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  transition: background 0.6s ease;
-  background: transparent;
-}
+/* ================================================================= */
+/* 3D LAYOUT RULES MATCHING IMAGE_53D29D.JPG                         */
+/* ================================================================= */
 
-/* --- CENTER CARD (Flat, forward-facing, sharp) --- */
+/* Center Card: Front-facing, completely flat, topmost layer */
 .center-card {
-  transform: rotateY(0deg) scale(1.05);
-  z-index: 5;
-  opacity: 1;
-}
-.center-card .edge-fade-overlay {
-  background: transparent; /* No fade over the active center image */
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  z-index: 3;
+  transition: transform 0.7s ease-in-out, z-index 0s; /* Layer depth shifts forward instantly */
 }
 
-/* --- LEFT CARD (Vanishes to the left, inner edge is tall) --- */
+/* Left Card: Pushed left relative to viewport, angled backwards on its left edge */
 .left-card {
-  transform: rotateY(42deg) scale(0.92) translateX(15px);
-  z-index: 2;
-  opacity: 0.9;
-}
-/* Replicates the white fade-out gradient toward the outer left edge */
-.left-card .edge-fade-overlay {
-  background: linear-gradient(to left, rgba(255,255,255,0) 40%, rgba(255,255,255,0.7) 100%);
+  transform: translate(-50%, -50%) translateX(-31vw) scale(0.85) rotateY(32deg);
+  z-index: 1;
 }
 
-/* --- RIGHT CARD (Vanishes to the right, inner edge is tall) --- */
+/* Right Card: Pushed right relative to viewport, angled backwards on its right edge */
 .right-card {
-  transform: rotateY(-42deg) scale(0.92) translateX(-15px);
-  z-index: 2;
-  opacity: 0.9;
-}
-/* Replicates the white fade-out gradient toward the outer right edge */
-.right-card .edge-fade-overlay {
-  background: linear-gradient(to right, rgba(255,255,255,0) 40%, rgba(255,255,255,0.7) 100%);
+  transform: translate(-50%, -50%) translateX(31vw) scale(0.85) rotateY(-32deg);
+  z-index: 1;
 }
 
-/* ========================================================= */
-/* DIRECTIONAL NAVIGATION SHARDS                             */
-/* ========================================================= */
+/* ================================================================= */
+/* LOOP RECIRCULATION PIPELINE                                        */
+/* ================================================================= */
+
+/* Outgoing target: Sweeps seamlessly off-screen left */
+.exit-left {
+  transform: translate(-50%, -50%) translateX(-75vw) scale(0.7) rotateY(45deg);
+  z-index: 0;
+}
+
+/* Incoming target: Glides seamlessly into track from off-screen right */
+.enter-right {
+  transform: translate(-50%, -50%) translateX(75vw) scale(0.7) rotateY(-45deg);
+  z-index: 0;
+}
+
+/* Dormant tracking pool */
+.hidden-card {
+  transform: translate(-50%, -50%) translateX(110vw) scale(0.5);
+  z-index: -1;
+}
+
+/* ================================================================= */
+/* NAVIGATION INTERFACES                                             */
+/* ================================================================= */
 .arrow {
   position: absolute;
   top: 50%;
@@ -128,50 +134,36 @@
   border: none;
   background: transparent;
   color: #ffffff;
-  font-size: 36px;
+  font-size: 42px;
   cursor: pointer;
   z-index: 10;
   padding: 15px;
+  opacity: 0.8;
   transition: opacity 0.2s ease;
-  opacity: 0.7;
 }
 
-.arrow:hover {
-  opacity: 1;
-}
+.arrow:hover { opacity: 1; }
+.arrow.left { left: 2%; }
+.arrow.right { right: 2%; }
 
-.arrow.left {
-  left: 3%;
-}
-
-.arrow.right {
-  right: 3%;
-}
-
-/* ========================================================= */
-/* RESPONSIVE LAYOUT RESPONSES                               */
-/* ========================================================= */
+/* ================================================================= */
+/* RESPONSIVE LAYOUT BREAKPOINTS                                     */
+/* ================================================================= */
 @media (max-width: 1024px) {
-  .card-perspective-wrapper {
-    width: 300px;
+  .testimonial-card {
+    width: 38vw; /* Scales card up slightly on smaller viewports to stay legible */
   }
-  .left-card {
-    transform: rotateY(30deg) scale(0.9);
-  }
-  .right-card {
-    transform: rotateY(-30deg) scale(0.9);
-  }
+  .left-card { transform: translate(-50%, -50%) translateX(-34vw) scale(0.85) rotateY(30deg); }
+  .right-card { transform: translate(-50%, -50%) translateX(34vw) scale(0.85) rotateY(-30deg); }
 }
 
 @media (max-width: 768px) {
-  .cards-viewport-3d {
-    perspective: none; /* Flatten tracking logic safely on small touchscreens */
-  }
-  .left-card, .right-card {
-    display: none; /* Focus strictly on the main center card layout block for mobile devices */
+  /* Hides side elements on small phones to preserve center focus cleanly */
+  .left-card, .right-card, .exit-left, .enter-right {
+    display: none !important;
   }
   .center-card {
-    transform: none;
+    transform: translate(-50%, -50%) scale(1);
     width: 85%;
   }
 }

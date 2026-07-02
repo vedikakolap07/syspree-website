@@ -8,7 +8,7 @@
 }
 
 .about-section {
-    background: #ffffff;
+    background: transparent;
     padding: 80px 6%;
     width: 100%;
     box-sizing: border-box;
@@ -77,7 +77,7 @@
 }
 
 .about-scroll-textbox::-webkit-scrollbar-thumb {
-    background: #ff6d00;
+    background: #d3d3d3;
     border-radius: 10px;
 }
 

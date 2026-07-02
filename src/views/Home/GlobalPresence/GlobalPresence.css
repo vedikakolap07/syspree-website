@@ -157,7 +157,7 @@
 /* Core Layout Wrapper Setup */
 .global-wrapper {
   width: 100%;
-  background-color: #ffffff;
+  background-color:transparent;
   font-family: 'Georgia', serif;
   box-sizing: border-box;
 }
@@ -168,6 +168,7 @@
   margin: 0 auto;
   padding: 60px 24px;
   text-align: center;
+  background: transparent;
 }
 
 .map-subtitle {

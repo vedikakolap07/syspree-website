@@ -4,7 +4,7 @@
 /* ========================================================= */
 .landing-sections-wrapper {
   width: 100%;
-  background-color: #fcfcfc;
+  background-color: transparent;
   font-family: 'Georgia', serif;
   box-sizing: border-box;
 }
@@ -30,12 +30,13 @@
 
 .core-meta-tag, .ind-meta-tag {
   font-family: sans-serif;
-  font-size: 11px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #333333;
   text-transform: uppercase;
   margin-bottom: 8px;
+  align-items: flex-start;
 }
 
 .core-meta-tag span, .ind-meta-tag span {

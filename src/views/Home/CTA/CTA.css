@@ -22,7 +22,14 @@
   margin: 0 auto;
   
   /* Rich vibrant orange background gradient with clean fallback background */
-  background: linear-gradient(135deg, #e06c00 0%, #c25a00 100%);
+  background-image: url("./Frame-7.png");
+    background:
+    linear-gradient(
+      rgba(224, 108, 0, 0.7),
+      rgba(224, 108, 0, 0.7)
+    ),
+    url("./Frame-7.png");
+
   background-size: cover;
   background-position: center;
   
@@ -41,11 +48,11 @@
 /* --- Banner Header Typography --- */
 .cta-small {
   color: rgba(255, 255, 255, 0.95);
-  font-family: sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 17px;
+
   letter-spacing: 1.2px;
-  margin-bottom: 10px;
+
   text-transform: uppercase;
 }
 
@@ -55,7 +62,7 @@
   font-size: 25px; 
   font-weight: 400;
   line-height: 1.35;
-  margin-bottom: 20px; 
+  margin-bottom: 50px; 
 }
 
 /* Explicitly ensures highlighted spans stay white and bold */

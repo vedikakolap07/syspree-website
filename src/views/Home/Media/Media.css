@@ -15,8 +15,8 @@
   margin: auto;
 }
 
-.media-tag {
-  font-size: 15px;
+.media-tag h3 {
+  font-size: 7px;
   letter-spacing: 3px;
   color: #111;
   margin-bottom: 10px;

@@ -3,7 +3,7 @@ import './IndustriesServe.css';
 
 interface CoreCard {
   id: string;
-  icon: string;
+  img: string;
   title: string;
   text: string;
 }
@@ -18,25 +18,25 @@ interface IndustryCard {
 const coreCardsData: CoreCard[] = [
   {
     id: "C",
-    icon: "👤", // Swap with your orange custom SVGs as needed
+    img: "https://syspree.com/wp-content/uploads/2024/08/image-18.png", // Swap with your orange custom SVGs as needed
     title: "Consult",
     text: "Marketing is done right when we understand you, your clients and target them with the right strategy. The first step to digital success."
   },
   {
     id: "O",
-    icon: "📊",
+    img: "https://syspree.com/wp-content/uploads/2024/08/image-19.png",
     title: "Optimize",
     text: "Here we execute what we strategized. Doing what we say and think is a habit at SySpree. And this shows in our successful results."
   },
   {
     id: "R",
-    icon: "🔍",
+    img: "https://syspree.com/wp-content/uploads/2024/08/image-19.png",
     title: "Reinforce",
     text: "At SySpree, we dont rest on our laurels, we push the envelope by multiplying, tweaking improving. We believe in success that lasts."
   },
   {
     id: "E",
-    icon: "🚀",
+    img: "https://syspree.com/wp-content/uploads/2024/08/image-20.png",
     title: "Excel",
     text: "Excellence in all we do. With SySpree, we dont just strive for your success, we strive harder for your excellence."
   }
@@ -86,7 +86,8 @@ function CoreAndIndustries() {
           <div className="core-cards-grid">
             {coreCardsData.map((card) => (
               <div key={card.id} className="core-text-card">
-                <div className="core-card-icon">{card.icon}</div>
+                <div className="core-card-icon">  <img src={card.img} alt={card.title} />
+</div>
                 <h3 className="core-card-title">{card.title}</h3>
                 <p className="core-card-body">{card.text}</p>
               </div>

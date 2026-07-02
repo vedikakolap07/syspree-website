@@ -9,218 +9,60 @@ body {
   background: #ffffff;
 }
 
-.hero{
-    width:90%;
-    max-width:1280px;
-    margin:30px auto 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:50px;
-}
+/* ================================================================= */
+/* GLOBAL PARALLAX LAYER STRUCTURING                                 */
+/* ================================================================= */
 
-.hero-left{
-    width:48%;
-}
-
-.hero-right{
-    width:52%;
-}
-
-.tagline{
-    text-align:center;
-    font-size:18px;
-    line-height:1.4;
-    margin-bottom:35px;
-}
-
-.hero-left h1{
-    font-size:30px;
-    line-height:1.15;
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.hero-left h1 span{
-    color:#ff8c00;
-    font-size:30px;
-}
-
-.hero-left h1 .black{
-    color:#000;
-}
-
-.framework{
-    text-align:center;
-    font-size:18px;
-    margin-bottom:45px;
-}
-
-/* Choice Card */
-/* Choice Card Options Layout */
-
-.choice-option {
-  display: flex;
-  justify-content: space-between; /* Pushes text to the left and percentage to the right */
-  align-items: center;           /* Vertically aligns radio, text, and % perfectly */
-  margin-bottom: 15px;
-  font-size: 14px;
-  cursor: pointer;
+.app-container {
   width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
 }
 
-.option-text-wrapper {
-  display: flex;
-  align-items: center;           /* Aligns the radio button with the option text */
-  gap: 10px;                     /* Spacing between radio button and text */
-}
-
-.choice-option input[type="radio"] {
-  margin: 0;                     /* Reset default margins for better alignment */
-  transform: translateY(-1px);   /* Fine-tuning optical vertical alignment */
-}
-
-.percent {
-  color: #ff8c00;
-  font-weight: bold;
-  white-space: nowrap;           /* Prevents the % sign from wrapping to a new line */
-  margin-left: 15px;
-}
-.choice-card{
-    width:560px;
-    background:#fff;
-    padding:30px;
-    border-top:4px solid #ff8c00;
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
-}
-
-.choice-card h2 {
-  font-size: 24px;
-  font-weight: normal;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.choice-card label {
-  display: block;
-  margin-bottom: 15px;
-  font-size: 14px;
-}
-
-.choice-card input {
-  margin-right: 10px;
-}
-
-.percent {
-  color: orange;
-  margin-left: 8px;
-  font-weight: bold;
-}
-
-.small {
-  font-size: 14px;
-}
-
-.choice-card button{
-    display:block;
-    margin:25px auto 0;
-    padding:12px 28px;
-    border-radius:40px;
-    background:#ff9800;
-    color:#fff;
-    border:none;
-    font-size:18px;
-    cursor:pointer;
-}
-
-.hero-right{
-    padding-top:10px;
-}
-
-.choice-card button:hover {
-  background: #e68400;
-}
-
-
-.image-container{
-    width:100%;
-}
-
-.image-container img{
-    width:100%;
-    display:block;
-}
-
-.growth-badge {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  color: #ff9800;
-  text-align: right;
-  font-weight: bold;
-}
-
-.growth-badge .big {
-  display: block;
-  font-size: 90px;
-  line-height: 1;
-}
-
-.growth-badge span:last-child {
-  font-size: 30px;
-}
-
-
-
-/* Responsive */
-
-@media (max-width: 992px) {
-  .hero {
-    flex-direction: column;
-  }
-
-  .choice-card {
-    width: 100%;
-  }
-
-  .hero-left h1 {
-    font-size: 48px;
-      margin-bottom: 15px;   /* was 30px */
-
-  }
-
-  .tagline,
-  .framework {
-    font-size: 18px;
-      margin-bottom: 15px;   /* was 35px */
-
-  }
-
-  .image-container {
-    height: 420px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    width: 95%;
-  }
-
-  .hero-left h1 {
-    font-size: 36px;
-  }
-
-  .choice-card h2 {
-    font-size: 30px;
-  }
-
-  .growth-badge .big {
-    font-size: 60px;
-  }
-
-  .growth-badge span:last-child {
-    font-size: 20px;
-  }
-
+/* The Fixed Wallpaper Trackers */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensures full screen coverage per section */
   
+  /* Core Parallax Mechanics */
+  background-attachment: fixed; /* Locks wallpaper relative to viewport window */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  /* Layout centering for inner section blocks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* TEMPORARY DEBUGGER LINE: Delete this once your images show up */
+  border: 5px solid red !important;
+}
+
+/* Content wrapper that glides directly over the frozen background */
+.section-content-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  /* Optional background tint if your images make text hard to read */
+  /* background: rgba(255, 255, 255, 0.05); */
+}
+
+/* Regular Grid Rows (Capabilities, Case Studies, Leadership) */
+.normal-scroll-container {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  z-index: 5; /* Keeps solid content stacked visually cleanly on top of backgrounds */
+}
+
+/* ================================================================= */
+/* MOBILE OVERRIDE (CRITICAL FOR IOS/ANDROID PERFORMANCE)           */
+/* ================================================================= */
+@media (max-width: 1024px) {
+  .parallax-container {
+    /* iOS Safari breaks and distorts images if background-attachment: fixed is active */
+    background-attachment: scroll; 
+  }
 }

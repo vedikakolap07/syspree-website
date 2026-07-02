@@ -1,77 +1,63 @@
-import  { useState } from "react";
 import "./Herosection.css";
 
-export default function HeroSection() {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
+function Home() {
   return (
-    <div className="hero-page-wrapper">
-      <section className="hero-layout-container">
-        {/* LEFT CONTENT COLUMN */}
-        <div className="hero-text-side">
-          <p className="hero-top-subtitle">
-            RIGHT CLIENTS, RIGHT PRICE, RIGHT RESULTS TAILORED FOR YOU
-          </p>
-          
-          <h1 className="hero-main-title">
-            <span className="brand-orange">Digital Marketing</span> and{" "}
-            <span className="brand-orange">Web Development</span> Built for{" "}
-            <span className="brand-orange">Your Profit</span>
-          </h1>
-          
-          <p className="hero-framework-tag">
-            POWERED BY OUR PROVEN FRAMEWORK <strong>CORE.</strong>
-          </p>
+    <>
+    <section className="hero">
+      
+      <div className="hero-left">
+        <p className="tagline">
+          RIGHT CLIENTS, RIGHT PRICE, RIGHT RESULTS TAILORED FOR YOU
+        </p>
 
-          {/* POLL CARD */}
-          <div className="thought-poll-card">
-            <h3 className="poll-header">Whats your thought?</h3>
-            
-            <div className="poll-options-list">
-              <label className="poll-item">
-                <input 
-                  type="radio" 
-                  name="thought-poll" 
-                  value="yes"
-                  checked={selectedOption === "yes"}
-                  onChange={() => setSelectedOption("yes")}
-                />
-                <span className="radio-custom"></span>
-                <span className="option-text">
-                  Yes, I want to increase profits through digital marketing <span className="percentage-text">88%</span>
-                </span>
-              </label>
+        <h1>
+          <span>Digital Marketing</span> and
+          <br />
+          <span>Web Development</span>
+          <br />
+          Built for <span>Your Profit</span>
+        </h1>
 
-              <label className="poll-item">
-                <input 
-                  type="radio" 
-                  name="thought-poll" 
-                  value="no"
-                  checked={selectedOption === "no"}
-                  onChange={() => setSelectedOption("no")}
-                />
-                <span className="radio-custom"></span>
-                <span className="option-text">
-                  No, I am not ready to grow just yet <span className="percentage-text">12%</span>
-                </span>
-              </label>
-            </div>
+        <p className="framework">
+          POWERED BY OUR PROVEN FRAMEWORK <strong>CORE.</strong>
+        </p>
 
-            <div className="poll-action-wrapper">
-              <button className="poll-submit-btn">I Made My Choice</button>
-            </div>
+        <div className="choice-card">
+          <h2>What's your thought?</h2>
+
+          {/* Applied the flexbox wrapper classes here */}
+          <div className="choice-option">
+            <label className="option-text-wrapper">
+              <input type="radio" name="choice" />
+              <span>Yes, I want to increase profits through digital marketing</span>
+            </label>
+            <span className="percent">88%</span>
           </div>
-        </div>
 
-        {/* RIGHT IMAGE COLUMN */}
-        <div className="hero-graphics-side">
-          <img 
-            src="https://syspree.com/wp-content/uploads/2024/09/Thumbnail-1-tlg.jpg" 
-            alt="5x Growth Results Showcase" 
-            className="main-showcase-img"
-          />
+          <div className="choice-option">
+            <label className="option-text-wrapper">
+              <input type="radio" name="choice" />
+              <span>No, I am not ready to grow just yet</span>
+            </label>
+            <span className="percent small">12%</span>
+          </div>
+
+          <button>I Made My Choice</button>
         </div>
-      </section>
-    </div>
+      </div>
+
+      <div className="hero-right">
+        <div className="image-container">
+          <img src="https://syspree.com/wp-content/smush-webp/2025/08/Website-Banner-1.1.jpg.webp" alt="Hero" />
+        </div>
+      </div>
+      
+    </section>
+    <div>
+      <img src="./assets/wave.png"
+></img>        </div>
+</>
   );
 }
+
+export default Home;

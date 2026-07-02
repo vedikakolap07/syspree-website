@@ -36,7 +36,7 @@ function Media() {
 
       <div className="media-container">
 
-        <p className="media-tag">MEDIA</p>
+        <h3 className="media-tag">MEDIA</h3>
 
         <h2>
           <span>Syspree</span> in Media

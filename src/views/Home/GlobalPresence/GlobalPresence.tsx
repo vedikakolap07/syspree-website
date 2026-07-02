@@ -5,7 +5,6 @@ import './GlobalPresence.css';
 interface StoryVideo {
   id: number;
   thumbnail: string;
-  title: string;
   logo: string;
 }
 
@@ -35,26 +34,22 @@ const officeLocations = [
 const storiesData: StoryVideo[] = [
   {
     id: 1,
-    thumbnail: 'path-to-video-thumbnail1.jpg',
-    title: 'Creme de la Creme',
+    thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/thumb-1.jpg',
     logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
   },
   {
     id: 2,
-    thumbnail: 'path-to-video-thumbnail2.jpg',
-    title: 'One team, One dream, SySpree.',
+    thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/Story-2.00_00_01_13.Still002.png',
     logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
   },
   {
     id: 3,
-    thumbnail: 'path-to-video-thumbnail3.jpg',
-    title: '',
+    thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/Story-3.00_00_01_25.Still001.png',
     logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
   },
   {
     id: 4,
-    thumbnail: 'path-to-video-thumbnail4.jpg',
-    title: '',
+    thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/thumb-4.jpg',
     logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
   }
 ];
@@ -73,7 +68,7 @@ function GlobalPresence() {
         <div className="stories-grid">
           {storiesData.map((story) => (
             <div key={story.id} className="story-card">
-              <img src={story.thumbnail} alt={story.title || "Syspree Story"} className="story-thumbnail" />
+              <img src={story.thumbnail} alt={"Syspree Story"} className="story-thumbnail" />
               <div className="card-overlay">
                 <div className="story-brand-logo">
                   <img src={story.logo} alt="Syspree" />
@@ -84,11 +79,7 @@ function GlobalPresence() {
                     <polygon points="40,35 70,50 40,65" fill="white" />
                   </svg>
                 </button>
-                {story.title && (
-                  <div className="story-card-footer">
-                    <h3 className="story-card-title">{story.title}</h3>
-                  </div>
-                )}
+                
               </div>
             </div>
           ))}

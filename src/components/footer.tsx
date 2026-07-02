@@ -47,7 +47,7 @@ function Footer() {
                 alt="Payment Methods"
               />
             </div>
-            <button className="pay-btn">Pay Here</button>
+          
             <img
               className="award"
               src="https://threebestrated.in/awards/web_designers-thane-2026-drk.svg"
