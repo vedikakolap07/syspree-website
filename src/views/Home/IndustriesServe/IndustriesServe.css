@@ -1,8 +1,4 @@
-Here is your complete, fully optimized, and cleaned-up **`IndustriesServe.css`** file.
 
-This update combines all your styling requirements perfectly: it fixes the card text sizes to stay compactly "squeezed" to prevent bloated heights, uses the clean `Georgia` font variant seen in the original mockup, includes a soft card border drop-shadow, and introduces an authentic pixel-perfect **middle vertical line** between the desktop columns exactly like your reference image (`image_428486.png`).
-
-```css
 /* ========================================================= */
 /* GLOBAL CONTAINER SETTINGS                                 */
 /* ========================================================= */
@@ -308,4 +304,3 @@ This update combines all your styling requirements perfectly: it fixes the card 
   }
 }
 
-```
