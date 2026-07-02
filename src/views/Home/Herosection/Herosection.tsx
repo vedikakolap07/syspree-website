@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./HeroSection.css";
 
 export default function HeroSection() {
