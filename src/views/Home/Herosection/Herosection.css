@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Outer canvas safety wrapper */
+.hero-page-wrapper {
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 0; /* Kept top and bottom padding baseline intact */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-layout-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; 
+  gap: 60px;
+  width: 100%;
+  max-width: 1540px;          /* Slightly higher max-width to allow room for the deep side padding */
+  margin: 0 auto;
+  padding: 0 140px;           /* INCREASED STRICKLY ON LEFT AND RIGHT SIDES ONLY */
+  align-items: center;
+}
+
+/* ========================================================= */
+/* LEFT CONTENT SIDE - TIGHT TYPOGRAPHY BLOCK                */
+/* ========================================================= */
+.hero-text-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-top-subtitle {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #666666;
+  margin-bottom: 8px;        /* Tight vertical rhythm */
+}
+
+.hero-main-title {
+  font-family: Georgia, serif;
+  font-size: 38px; 
+  line-height: 1.25;
+  font-weight: 400;
+  color: #222222;
+  margin-bottom: 12px;       /* Tight vertical rhythm */
+  max-width: 540px; 
+}
+
+.hero-main-title .brand-orange {
+  color: #ff8a00;
+  font-weight: 700;
+}
+
+.hero-framework-tag {
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #444444;
+  margin-bottom: 24px;       /* Tight transition gap directly into poll box */
+}
+
+/* ========================================================= */
+/* POLL CARD BLOCK                                           */
+/* ========================================================= */
+.thought-poll-card {
+  width: 100%;
+  max-width: 440px; 
+  background: #ffffff;
+  border-top: 4px solid #ff8a00;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  padding: 35px 30px;
+  border-radius: 0 0 4px 4px;
+}
+
+.poll-header {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #222222;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.poll-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.poll-item {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.poll-item input[type="radio"] {
+  display: none; 
+}
+
+.radio-custom {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #b5b5b5;
+  border-radius: 50%;
+  margin-top: 3px;
+  margin-right: 12px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.poll-item input[type="radio"]:checked ~ .radio-custom {
+  border-color: #ff8a00;
+}
+
+.poll-item input[type="radio"]:checked ~ .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
+  background: #ff8a00;
+  border-radius: 50%;
+}
+
+.option-text {
+  font-family: Arial, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: #444444;
+}
+
+.percentage-text {
+  color: #ff8a00;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.poll-action-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.poll-submit-btn {
+  background: #ff8a00;
+  color: #ffffff;
+  border: none;
+  padding: 12px 36px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  transition: background 0.2s ease;
+}
+
+.poll-submit-btn:hover {
+  background: #e07a00;
+}
+
+/* ========================================================= */
+/* RIGHT GRAPHICS SIDE                                       */
+/* ========================================================= */
+.hero-graphics-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-showcase-img {
+  width: 100%;
+  max-width: 520px; 
+  height: auto;
+  display: block;
+}
+
+/* Responsive breakpoint handling scales side padding down seamlessly */
+@media (max-width: 1200px) {
+  .hero-layout-container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-layout-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 30px;
+  }
+  .hero-text-side {
+    align-items: center;
+    text-align: center;
+  }
+  .main-showcase-img {
+    max-width: 450px;
+  }
+}

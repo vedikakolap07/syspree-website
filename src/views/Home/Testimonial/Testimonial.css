@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-section {
+  background: #ffffff;
+  padding: 60px 0 0 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.testimonial-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #222222;
+  text-transform: uppercase;
+}
+
+/* ========================================================= */
+/* FULL WIDTH TRACK BLOCK                                    */
+/* ========================================================= */
+.testimonial-slider-fullwidth {
+  position: relative;
+  background: #ff8a00; /* Matching the orange banner background color */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 45px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D Viewport Parent Setup */
+.cards-viewport-3d {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* This activates true coordinate depth calculation */
+  perspective: 1200px; 
+  transform-style: preserve-3d;
+}
+
+/* ========================================================= */
+/* CARD WRAPPERS & TRUE PERSPECTIVE ROTATIONS                */
+/* ========================================================= */
+.card-perspective-wrapper {
+  width: 380px;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+  will-change: transform, opacity;
+  z-index: 1;
+}
+
+.card-inner-frame {
+  background: #ffffff;
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-inner-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Edge Fade Overlay Layer */
+.edge-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: background 0.6s ease;
+  background: transparent;
+}
+
+/* --- CENTER CARD (Flat, forward-facing, sharp) --- */
+.center-card {
+  transform: rotateY(0deg) scale(1.05);
+  z-index: 5;
+  opacity: 1;
+}
+.center-card .edge-fade-overlay {
+  background: transparent; /* No fade over the active center image */
+}
+
+/* --- LEFT CARD (Vanishes to the left, inner edge is tall) --- */
+.left-card {
+  transform: rotateY(42deg) scale(0.92) translateX(15px);
+  z-index: 2;
+  opacity: 0.9;
+}
+/* Replicates the white fade-out gradient toward the outer left edge */
+.left-card .edge-fade-overlay {
+  background: linear-gradient(to left, rgba(255,255,255,0) 40%, rgba(255,255,255,0.7) 100%);
+}
+
+/* --- RIGHT CARD (Vanishes to the right, inner edge is tall) --- */
+.right-card {
+  transform: rotateY(-42deg) scale(0.92) translateX(-15px);
+  z-index: 2;
+  opacity: 0.9;
+}
+/* Replicates the white fade-out gradient toward the outer right edge */
+.right-card .edge-fade-overlay {
+  background: linear-gradient(to right, rgba(255,255,255,0) 40%, rgba(255,255,255,0.7) 100%);
+}
+
+/* ========================================================= */
+/* DIRECTIONAL NAVIGATION SHARDS                             */
+/* ========================================================= */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 15px;
+  transition: opacity 0.2s ease;
+  opacity: 0.7;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow.left {
+  left: 3%;
+}
+
+.arrow.right {
+  right: 3%;
+}
+
+/* ========================================================= */
+/* RESPONSIVE LAYOUT RESPONSES                               */
+/* ========================================================= */
+@media (max-width: 1024px) {
+  .card-perspective-wrapper {
+    width: 300px;
+  }
+  .left-card {
+    transform: rotateY(30deg) scale(0.9);
+  }
+  .right-card {
+    transform: rotateY(-30deg) scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-viewport-3d {
+    perspective: none; /* Flatten tracking logic safely on small touchscreens */
+  }
+  .left-card, .right-card {
+    display: none; /* Focus strictly on the main center card layout block for mobile devices */
+  }
+  .center-card {
+    transform: none;
+    width: 85%;
+  }
+}

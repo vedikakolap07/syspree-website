@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.cta-section {
+  background: #ececec;
+  padding: 40px 0;
+  width: 100%;
+  clear: both;            /* Prevents any previous floated elements from overlapping */
+  display: flex;          /* Stacks layout sequentially in the DOM tree */
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-box {
+  /* Strict outer boundaries—no shrinking or shifting from outside layout styles */
+  width: 85%;
+  max-width: 1150px; 
+  margin: 0 auto;
+  
+  /* Rich vibrant orange background gradient with clean fallback background */
+  background: linear-gradient(135deg, #e06c00 0%, #c25a00 100%);
+  background-size: cover;
+  background-position: center;
+  
+  border-radius: 12px;
+  
+  /* Massive inner padding to pull contents inward from the sides without breaking outer scale */
+  padding: 32px 180px;  
+  
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(224, 90, 0, 0.12);
+  box-sizing: border-box;
+}
+
+/* --- Banner Header Typography --- */
+.cta-small {
+  color: rgba(255, 255, 255, 0.95);
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.cta-title {
+  color: #ffffff; 
+  font-family: 'Georgia', serif;
+  font-size: 25px; 
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 20px; 
+}
+
+/* Explicitly ensures highlighted spans stay white and bold */
+.cta-title span {
+  font-weight: 700;
+  color: #ffffff !important; 
+}
+
+/* --- Interactive Action Control --- */
+.cta-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #e06c00; 
+  border: none;
+  border-radius: 50px;
+  padding: 10px 36px; 
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* ========================================================= */
+/* VIEWPORT BREAKPOINTS (PREVENTS INNER SQUEEZING OVERFLOW) */
+/* ========================================================= */
+@media (max-width: 1024px) {
+  .cta-box {
+    padding: 32px 80px; /* Fluid drop down for safe layout display text lengths */
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-box {
+    width: 90%;
+    padding: 24px 20px; 
+  }
+  .cta-title {
+    font-size: 20px;
+  }
+  .cta-btn {
+    font-size: 14px;
+    padding: 8px 24px;
+  }
+}

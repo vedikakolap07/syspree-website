@@ -1,0 +1,287 @@
+/* Section Container Layout */
+.knowledge-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+}
+
+/* Subtitle and Headings */
+.knowledge-subtitle {
+  font-family: sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.knowledge-subtitle span {
+  color: #ff9800; /* Orange accent word */
+  font-weight: bold;
+}
+
+.knowledge-section h2 {
+  font-size: 32px;
+  color: #111;
+  margin-bottom: 45px;
+  font-weight: normal;
+}
+
+/* Three-Column Grid Setup */
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; /* Cards touch seamlessly inside a unified border context */
+  border: 1px solid #e0b060; /* Soft gold/orange perimeter border box */
+  margin-bottom: 40px;
+  background-color: #fff;
+}
+
+/* Individual Card Styling */
+.knowledge-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+/* Internal vertical column lines to separate the 3 columns */
+.knowledge-card:not(:last-child) {
+  border-right: 1px solid #e0b060;
+}
+
+/* Image Wrappers and Border-Radius controls */
+.card-image-wrapper {
+  width: 100%;
+  aspect-ratio: 1.25 / 1; /* Keeps images cleanly uniformly boxed */
+  overflow: hidden;
+  border-radius: 12px; /* Smooth rounded images from the layout image */
+  margin-bottom: 25px;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Title Settings */
+.card-content {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-family: sans-serif; /* Explicit clean sans-serif for descriptions */
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Bottom Centered Call To Action Button */
+.knowledge-btn {
+  background-color: #ff9800;
+  color: #ffffff;
+  border: none;
+  border-radius: 40px;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin: 10px auto 0 auto;
+  display: inline-block;
+}
+
+.knowledge-btn:hover {
+  background-color: #e68400;
+}
+
+/* Responsive Scaling Viewports */
+@media (max-width: 992px) {
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+    border: none;
+  }
+  
+  .knowledge-card {
+    border: 1px solid #e0b060;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .knowledge-card:not(:last-child) {
+    border-right: 1px solid #e0b060;
+  }
+}
+
+/* Core Layout Wrapper */
+.achievements-section {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: #ffffff;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Background Layer Decorations --- */
+.bg-mountain-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  height: 200px;
+  background: url('path-to-left-mountain.png') no-repeat bottom left;
+  background-size: contain;
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-mountain-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 600px;
+  height: 100%;
+  background: url('path-to-right-mountain-base.png') no-repeat bottom right;
+  background-size: contain;
+  opacity: 0.12;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Layering your transparent jumping icon exactly over the right side graphic background */
+.silhouette-overlay {
+  width: 100%;
+  height: 100%;
+  background: url('path-to-transparent-jumping-man.png') no-repeat center right 50px;
+  background-size: contain;
+}
+
+/* Main Functional Container */
+.achievements-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Left Content Area */
+.achievements-left {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.achievements-sub {
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #333333;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.achievements-heading {
+  font-size: 28px;
+  color: #111111;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.achievements-heading span {
+  color: #ff9800; /* Distinct orange accent keyword color */
+  font-weight: bold;
+}
+
+/* Right Side Matrix Grid */
+.achievements-right {
+  width: 100%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Uses explicit orange borders that merge smoothly like your reference design */
+  border-top: 1px solid rgba(255, 152, 0, 0.4);
+  border-left: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+/* Custom individual blocks inside grid matrix */
+.stat-box {
+  padding: 30px 40px;
+  text-align: left;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(255, 152, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 152, 0, 0.4);
+}
+
+/* Takes care of the 5th odd block to make it look clean if layout wraps */
+.stat-box:nth-child(5) {
+  grid-column: span 1;
+}
+
+.stat-number {
+  display: block;
+  font-family: sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: #ff9800;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #444444;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive viewports for smaller screens */
+@media (min-width: 992px) {
+  .achievements-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .achievements-left {
+    width: 40%;
+  }
+
+  .achievements-right {
+    width: 55%;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  
+  .stat-box {
+    padding: 20px;
+    border-left: 1px solid rgba(255, 152, 0, 0.4);
+  }
+}

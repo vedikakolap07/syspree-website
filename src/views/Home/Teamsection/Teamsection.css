@@ -1,0 +1,152 @@
+/* Container Spacing & Base Layout */
+.team-section-container {
+  position: relative;
+  width: 100%;
+  max-width: 1680px; 
+  margin: 0 auto;
+  padding: 80px 50px; 
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.team-bg-silhouette {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 100%;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.silhouette-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right;
+}
+
+.team-content-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.team-images-column {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-avatar-card {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  filter: grayscale(100%) contrast(115%);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.team-avatar-card:hover {
+  filter: grayscale(0%) contrast(100%);
+  transform: scale(1.03);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-text-column {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; /* CRITICAL: Prevents columns from stretching child paragraphs */
+}
+
+.team-meta-title {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+/* Flex gap control for the paragraphs */
+.team-text-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Exactly sets the pixel spacing between paragraphs */
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.team-text {
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  text-align: left;
+  margin: 0 !important; /* Forces out default browser structural gaps */
+  padding: 0 !important;
+}
+
+.team-cta-btn {
+  margin-top: 30px; 
+  background-color: #ff9800;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  border-radius: 9999px;
+  padding: 14px 36px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.team-cta-btn:hover {
+  background-color: #e68400;
+}
+
+/* Desktop Grid Formats */
+@media (min-width: 1024px) {
+  .team-content-wrapper {
+    display: grid !important;
+    grid-template-columns: 58% 42% !important; 
+    align-items: center !important; /* Vertically centers the image cluster with the text box */
+    gap: 85px !important;
+  }
+  
+  .team-images-column {
+    justify-content: flex-start !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+  
+  .team-avatar-card {
+    flex: 1 !important;
+    max-width: 210px !important;
+  }
+  
+  .team-text-column {
+    width: 100% !important;
+    max-width: 480px !important;
+    justify-content: flex-start !important;
+  }
+}

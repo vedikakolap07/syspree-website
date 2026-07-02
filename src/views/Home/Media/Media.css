@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.media {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.media-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.media-tag {
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.media h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.media h2 span {
+  color: #ff8800;
+  font-weight: 700;
+}
+
+.media-description {
+  width: 90%;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.media-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* --- CONTAINER ALIGNMENT CORRECTION --- */
+.media-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  
+  /* CRITICAL FIX: Stops cards from stretching vertically to fill the row */
+  align-items: start !important; 
+}
+
+/* --- COMPACT SQUARE CARD LAYOUT --- */
+.media-card {
+  border: 1px solid #e5e5e5;
+  padding: 35px 30px;         /* Adds breathing room to the sides, cuts the top/bottom bloat */
+  background: #fff;
+  border-radius: 8px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: flex-start;
+  gap: 16px;                  /* Keeps content elements stacked beautifully */
+  
+  /* Natural collapsing height configurations */
+  min-height: unset !important;
+  height: auto !important;
+  
+  transition: .3s;
+}
+
+.media-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+/* Tighter, crisp quote mark */
+.quote {
+  font-size: 56px;            /* Scaled down from 70px to stop stretching the card header */
+  color: #ff8800;
+  line-height: 1;
+  margin-bottom: -10px;       /* Gently pulls text block closer to icon */
+}
+
+/* Clean, readable text size matching the mockup */
+.media-card p {
+  font-family: sans-serif;
+  font-size: 21px;            /* Slightly optimized from 24px for great proportional wrapping */
+  line-height: 1.4;
+  color: #111;
+  margin: 0;
+}
+
+.media-card span {
+  color: #ff8800;
+}
+
+/* Brand logo adjustments */
+.media-card img {
+  width: auto;
+  max-width: 100px;
+  height: 28px;               /* Constrains the height to keep cards horizontally uniform */
+  object-fit: contain;
+  margin-top: 20px;           /* Clean separation from text */
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 992px) {
+  .media-cards {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .media-cards {
+    grid-template-columns: 1fr;
+    align-items: start !important;
+  }
+  
+  .media-card p {
+    font-size: 19px;
+  }
+}
