@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #ffffff;
+}
+
+/* ================================================================= */
+/* GLOBAL PARALLAX LAYER STRUCTURING                                 */
+/* ================================================================= */
+
+.app-container {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* The Fixed Wallpaper Trackers */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensures full screen coverage per section */
+  
+  /* Core Parallax Mechanics */
+  background-attachment: fixed; /* Locks wallpaper relative to viewport window */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  /* Layout centering for inner section blocks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* TEMPORARY DEBUGGER LINE: Delete this once your images show up */
+  border: 5px solid red !important;
+}
+
+/* Content wrapper that glides directly over the frozen background */
+.section-content-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  /* Optional background tint if your images make text hard to read */
+  /* background: rgba(255, 255, 255, 0.05); */
+}
+
+/* Regular Grid Rows (Capabilities, Case Studies, Leadership) */
+.normal-scroll-container {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  z-index: 5; /* Keeps solid content stacked visually cleanly on top of backgrounds */
+}
+
+/* ================================================================= */
+/* MOBILE OVERRIDE (CRITICAL FOR IOS/ANDROID PERFORMANCE)           */
+/* ================================================================= */
+@media (max-width: 1024px) {
+  .parallax-container {
+    /* iOS Safari breaks and distorts images if background-attachment: fixed is active */
+    background-attachment: scroll; 
+  }
+}

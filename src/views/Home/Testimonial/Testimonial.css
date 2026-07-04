@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-section {
+  background: #ffffff;
+  padding: 60px 0 0 0;
+  width: 100%;
+}
+
+.testimonial-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 40px;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #222222;
+  text-transform: uppercase;
+}
+
+/* Fixed container block matching SySpree dimensions */
+.testimonial-slider-container {
+  position: relative;
+  background: #ff8a00;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 45px 0;
+  height: 400px;
+  overflow: hidden; 
+}
+
+.cards-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1400px; 
+  height: 100%;
+  margin: 0 auto;
+  perspective: 1200px; 
+  transform-style: preserve-3d;
+}
+
+.testimonial-card {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  width: 28vw;
+  max-width: 440px;
+  min-width: 320px;
+  aspect-ratio: 16 / 9;
+  
+  transform-origin: center center;
+  
+  transition: transform 0.7s ease-in-out, z-index 0.7s step-end;
+  will-change: transform;
+}
+
+.card-inner {
+  background: #ffffff;
+  padding: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  width: 100%;
+  height: 100%;
+}
+
+.card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+ 
+
+.center-card {
+  transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+  z-index: 3;
+  transition: transform 0.7s ease-in-out, z-index 0s; /* Layer depth shifts forward instantly */
+}
+
+.left-card {
+  transform: translate(-50%, -50%) translateX(-31vw) scale(0.85) rotateY(32deg);
+  z-index: 1;
+}
+
+.right-card {
+  transform: translate(-50%, -50%) translateX(31vw) scale(0.85) rotateY(-32deg);
+  z-index: 1;
+}
+
+
+.exit-left {
+  transform: translate(-50%, -50%) translateX(-75vw) scale(0.7) rotateY(45deg);
+  z-index: 0;
+}
+
+.enter-right {
+  transform: translate(-50%, -50%) translateX(75vw) scale(0.7) rotateY(-45deg);
+  z-index: 0;
+}
+
+.hidden-card {
+  transform: translate(-50%, -50%) translateX(110vw) scale(0.5);
+  z-index: -1;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 42px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 15px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.arrow:hover { opacity: 1; }
+.arrow.left { left: 2%; }
+.arrow.right { right: 2%; }
+
+
+@media (max-width: 1024px) {
+  .testimonial-card {
+    width: 38vw;
+  }
+  .left-card { transform: translate(-50%, -50%) translateX(-34vw) scale(0.85) rotateY(30deg); }
+  .right-card { transform: translate(-50%, -50%) translateX(34vw) scale(0.85) rotateY(-30deg); }
+}
+
+@media (max-width: 768px) {
+  .left-card, .right-card, .exit-left, .enter-right {
+    display: none !important;
+  }
+  .center-card {
+    transform: translate(-50%, -50%) scale(1);
+    width: 85%;
+  }
+}

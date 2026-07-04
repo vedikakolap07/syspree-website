@@ -1,0 +1,56 @@
+
+/* ==========================================================================
+   1. GLOBAL RESET
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   2. REUSABLE PARALLAX MECHANICS
+   ========================================================================== */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  
+  /* Forces background image to lock onto the viewport while page scrolls */
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reusable wrapper that centers content nicely inside sections */
+.section-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* ==========================================================================
+   3. STANDARD SCROLL MECHANICS
+   ========================================================================== */
+.normal-scroll-container {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  z-index: 3; /* Allows standard panels to cleanly roll over fixed assets */
+}
