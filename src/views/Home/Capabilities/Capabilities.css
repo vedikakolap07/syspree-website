@@ -8,12 +8,6 @@
   padding-top: 40px;
 }
 
-<<<<<<< HEAD
-=======
-/* ========================================================= */
-/* HEADER SETTING BLOCK                                      */
-/* ========================================================= */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .heading {
   text-align: center;
   margin-bottom: 40px;
@@ -45,13 +39,6 @@
   font-weight: 700;
 }
 
-<<<<<<< HEAD
-
-=======
-/* ========================================================= */
-/* GRID LAYOUT MATRIX                                        */
-/* ========================================================= */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -64,11 +51,7 @@
 .card {
   height: 155px; 
   color: white;
-<<<<<<< HEAD
   position: relative; 
-=======
-  position: relative; /* Crucial anchor for positioning the top line and arrow */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   display: flex;
   flex-direction: column;
   justify-content: center; 
@@ -78,7 +61,6 @@
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 
 .top-line {
   position: absolute;       
@@ -90,39 +72,16 @@
 }
 
 
-=======
-/* ========================================================= */
-/* THE TOP LINE FIX                                         */
-/* ========================================================= */
-.top-line {
-  position: absolute;       /* Takes it out of text layout flow */
-  top: 16px;                /* Spaces it down nicely from the top border */
-  left: 20px;               /* Pushes it right from the left border */
-  width: 14px !important;   /* STRICT small width override */
-  height: 2px !important;   /* Tighter thickness matching your reference image */
-  background: rgba(255, 255, 255, 0.8) !important;
-}
-
-/* --- Centered and Elevated Text --- */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .card .card-title {
   font-family: 'Georgia', serif;
   font-size: 17px;
   line-height: 1.3;
   font-weight: normal;
   width: 90%;
-<<<<<<< HEAD
   margin: -12px 0 0 0; 
 }
 
 
-=======
-  margin: -12px 0 0 0; /* Shifts text vertically upward slightly */
-  padding: 0;
-}
-
-/* --- Fixed Bottom Circle Arrow Action Icon --- */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .card-arrow-btn {
   position: absolute;
   bottom: 18px; 
@@ -141,13 +100,6 @@
   pointer-events: none;
 }
 
-<<<<<<< HEAD
-
-=======
-/* ========================================================= */
-/* BREAKPOINTS                                               */
-/* ========================================================= */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 @media (max-width: 1200px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);

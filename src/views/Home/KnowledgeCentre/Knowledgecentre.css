@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-=======
-/* Section Container Layout */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .knowledge-section {
   text-align: center;
   padding: 60px 20px;
@@ -11,11 +6,6 @@
   font-family: 'Georgia', serif;
 }
 
-<<<<<<< HEAD
-
-=======
-/* Subtitle and Headings */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .knowledge-subtitle {
   font-family: sans-serif;
   font-size: 14px;
@@ -27,11 +17,7 @@
 }
 
 .knowledge-subtitle span {
-<<<<<<< HEAD
   color: #ff9800; 
-=======
-  color: #ff9800; /* Orange accent word */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   font-weight: bold;
 }
 
@@ -42,29 +28,16 @@
   font-weight: normal;
 }
 
-<<<<<<< HEAD
 
 .knowledge-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0; 
   border: 1px solid #e0b060; 
-=======
-/* Three-Column Grid Setup */
-.knowledge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0; /* Cards touch seamlessly inside a unified border context */
-  border: 1px solid #e0b060; /* Soft gold/orange perimeter border box */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   margin-bottom: 40px;
   background-color: #fff;
 }
 
-<<<<<<< HEAD
-=======
-/* Individual Card Styling */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .knowledge-card {
   display: flex;
   flex-direction: column;
@@ -72,29 +45,16 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-=======
-/* Internal vertical column lines to separate the 3 columns */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .knowledge-card:not(:last-child) {
   border-right: 1px solid #e0b060;
 }
 
-<<<<<<< HEAD
 
 .card-image-wrapper {
   width: 100%;
   aspect-ratio: 1.25 / 1; 
   overflow: hidden;
   border-radius: 12px;
-=======
-/* Image Wrappers and Border-Radius controls */
-.card-image-wrapper {
-  width: 100%;
-  aspect-ratio: 1.25 / 1; /* Keeps images cleanly uniformly boxed */
-  overflow: hidden;
-  border-radius: 12px; /* Smooth rounded images from the layout image */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   margin-bottom: 25px;
 }
 
@@ -105,22 +65,13 @@
   display: block;
 }
 
-<<<<<<< HEAD
-
-=======
-/* Content Title Settings */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .card-content {
   text-align: left;
   flex-grow: 1;
 }
 
 .card-content h3 {
-<<<<<<< HEAD
   font-family: sans-serif; 
-=======
-  font-family: sans-serif; /* Explicit clean sans-serif for descriptions */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   font-size: 15px;
   line-height: 1.6;
   color: #222;
@@ -128,11 +79,6 @@
   margin: 0;
 }
 
-<<<<<<< HEAD
-
-=======
-/* Bottom Centered Call To Action Button */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .knowledge-btn {
   background-color: #ff9800;
   color: #ffffff;
@@ -151,11 +97,6 @@
   background-color: #e68400;
 }
 
-<<<<<<< HEAD
-
-=======
-/* Responsive Scaling Viewports */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 @media (max-width: 992px) {
   .knowledge-grid {
     grid-template-columns: 1fr;
@@ -173,11 +114,6 @@
   }
 }
 
-<<<<<<< HEAD
-
-=======
-/* Core Layout Wrapper */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .achievements-section {
   position: relative;
   width: 100%;
@@ -192,11 +128,6 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-
-=======
-/* --- Background Layer Decorations --- */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .bg-mountain-left {
   position: absolute;
   left: 0;
@@ -223,10 +154,6 @@
   pointer-events: none;
 }
 
-<<<<<<< HEAD
-=======
-/* Layering your transparent jumping icon exactly over the right side graphic background */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .silhouette-overlay {
   width: 100%;
   height: 100%;
@@ -234,10 +161,6 @@
   background-size: contain;
 }
 
-<<<<<<< HEAD
-=======
-/* Main Functional Container */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .achievements-container {
   position: relative;
   z-index: 10;
@@ -248,10 +171,6 @@
   gap: 48px;
 }
 
-<<<<<<< HEAD
-=======
-/* Left Content Area */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .achievements-left {
   text-align: left;
   display: flex;
@@ -278,19 +197,11 @@
 }
 
 .achievements-heading span {
-<<<<<<< HEAD
   color: #ff9800; 
   font-weight: bold;
 }
 
 
-=======
-  color: #ff9800; /* Distinct orange accent keyword color */
-  font-weight: bold;
-}
-
-/* Right Side Matrix Grid */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .achievements-right {
   width: 100%;
 }
@@ -298,18 +209,10 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-<<<<<<< HEAD
-=======
-  /* Uses explicit orange borders that merge smoothly like your reference design */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   border-top: 1px solid rgba(255, 152, 0, 0.4);
   border-left: 1px solid rgba(255, 152, 0, 0.4);
 }
 
-<<<<<<< HEAD
-=======
-/* Custom individual blocks inside grid matrix */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .stat-box {
   padding: 30px 40px;
   text-align: left;
@@ -318,10 +221,6 @@
   border-bottom: 1px solid rgba(255, 152, 0, 0.4);
 }
 
-<<<<<<< HEAD
-=======
-/* Takes care of the 5th odd block to make it look clean if layout wraps */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .stat-box:nth-child(5) {
   grid-column: span 1;
 }
@@ -344,10 +243,6 @@
   font-weight: 500;
 }
 
-<<<<<<< HEAD
-=======
-/* Responsive viewports for smaller screens */
->>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 @media (min-width: 992px) {
   .achievements-container {
     flex-direction: row;
