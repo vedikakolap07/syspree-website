@@ -15,9 +15,17 @@
   padding: 40px 24px; 
 }
 
+<<<<<<< HEAD
 
 .core-framework-section {
   background-color: #f7f7f7; 
+=======
+/* ========================================================= */
+/* SECTION 1: THE CORE FRAMEWORK                             */
+/* ========================================================= */
+.core-framework-section {
+  background-color: #f7f7f7; /* Matching light grey background from mockup */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   width: 100%;
   text-align: center;
 }
@@ -87,18 +95,30 @@
 .core-cards-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+<<<<<<< HEAD
   gap: 0px; 
+=======
+  gap: 0px; /* Zero grid gap so we can accurately space out custom divider margins */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   margin: 20px auto;
   max-width: 1100px;
 }
 
 .core-text-card {
   background: #ffffff;
+<<<<<<< HEAD
   border-radius: 6px; 
   padding: 24px 20px;
   margin: 10px;
   text-align: left; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+=======
+  border-radius: 6px; /* Small clean corners matching reference */
+  padding: 24px 20px; /* Spacious but squeezed layout */
+  margin: 10px;
+  text-align: left; /* Left-aligned contents */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); /* Soft tint shadow box */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   border: 1px solid rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
@@ -122,15 +142,24 @@
 }
 
 .core-card-body {
+<<<<<<< HEAD
   font-family: 'Georgia', serif; 
   font-size: 12px; 
+=======
+  font-family: 'Georgia', serif; /* Font matching image typography */
+  font-size: 12px; /* Small, tightly tracked body text */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   line-height: 1.55;
   color: #222222;
   margin: 0;
   text-align: left;
 }
 
+<<<<<<< HEAD
 
+=======
+/* --- Action Buttons --- */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .core-action-row, .ind-action-row {
   margin-top: 30px;
   text-align: center;
@@ -149,9 +178,19 @@
   transition: background-color 0.2s ease;
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+.orange-action-btn:hover {
+  background-color: #e07b00;
+}
+
+/* ========================================================= */
+/* SECTION 2: INDUSTRIES WE SERVE                            */
+/* ========================================================= */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .industries-serve-section {
   background-color: #ff8c00;
   width: 100%;
@@ -247,6 +286,7 @@
   border-color: #ff8c00;
 }
 
+<<<<<<< HEAD
 .industry-data-card.default-dark-orange,
 .industry-data-card.default-dark-orange.active-orange {
   background-color: #ff8c00;
@@ -264,6 +304,11 @@
 
 .default-dark-orange .ind-card-arrow {
   border-color: #ffffff;
+=======
+.active-orange .ind-card-title,
+.active-orange .ind-card-body,
+.active-orange .bold-question {
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   color: #ffffff;
 }
 
@@ -273,6 +318,12 @@
   color: #ff8c00;
 }
 
+<<<<<<< HEAD
+=======
+/* ========================================================= */
+/* RESPONSIVENESS AND INTER-CARD MIDDLE LINE OVERLAYS        */
+/* ========================================================= */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 @media (min-width: 768px) {
   .core-cards-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -298,6 +349,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
+<<<<<<< HEAD
   .core-text-card:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -306,6 +358,17 @@
     height: 60%;
     width: 1px;
     background-color: #dbdfe4; 
+=======
+  /* Renders a clean middle line exactly between adjacent columns */
+  .core-text-card:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -11px; /* Positions perfectly centered between margins */
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: #dbdfe4; /* Light clean separation stroke */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   }
 }
 

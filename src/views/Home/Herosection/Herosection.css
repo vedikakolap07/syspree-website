@@ -67,7 +67,6 @@ body {
   text-align: center;
 }
 
-
 .choice-option {
   display: flex;
   justify-content: space-between;
@@ -126,7 +125,6 @@ body {
   width: 100%;
   display: block;
 }
-
 
 @media (max-width: 992px) {
   .hero {

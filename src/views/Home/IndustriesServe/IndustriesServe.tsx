@@ -53,6 +53,11 @@ const industriesData: IndustryCard[] = [
 ];
 
 function CoreAndIndustries() {
+<<<<<<< HEAD
+=======
+  const [activeIndustry, setActiveIndustry] = useState<number | null>(1);
+
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   return (
     <div className="landing-sections-wrapper">
       
@@ -118,12 +123,22 @@ function CoreAndIndustries() {
 
           {/* Dynamic Selection Grid View */}
           <div className="industries-cards-grid">
+<<<<<<< HEAD
             {industriesData.map((ind, index) => {
               const isDarkOrangeCard = index === 0 || index === industriesData.length - 1;
               return (
                 <div 
                   key={ind.id} 
                   className={`industry-data-card ${isDarkOrangeCard ? 'default-dark-orange' : ''}`}
+=======
+            {industriesData.map((ind) => {
+              const isSelected = activeIndustry === ind.id;
+              return (
+                <div 
+                  key={ind.id} 
+                  className={`industry-data-card ${isSelected ? 'active-orange' : ''}`}
+                  onMouseEnter={() => setActiveIndustry(ind.id)}
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
                 >
                   <h3 className="ind-card-title">{ind.title}</h3>
                   <p className="ind-card-body">

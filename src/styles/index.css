@@ -1,7 +1,5 @@
 
-/* ==========================================================================
-   1. GLOBAL RESET
-   ========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,15 +14,12 @@ body {
   line-height: 1.5;
 }
 
-/* ==========================================================================
-   2. REUSABLE PARALLAX MECHANICS
-   ========================================================================== */
+
 .parallax-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
   
-  /* Forces background image to lock onto the viewport while page scrolls */
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,7 +30,7 @@ body {
   justify-content: center;
 }
 
-/* Reusable wrapper that centers content nicely inside sections */
+
 .section-content-wrapper {
   position: relative;
   z-index: 2;
@@ -45,12 +40,10 @@ body {
   padding: 50px 20px;
 }
 
-/* ==========================================================================
-   3. STANDARD SCROLL MECHANICS
-   ========================================================================== */
+
 .normal-scroll-container {
   position: relative;
   width: 100%;
   background: #ffffff;
-  z-index: 3; /* Allows standard panels to cleanly roll over fixed assets */
+  z-index: 3; 
 }

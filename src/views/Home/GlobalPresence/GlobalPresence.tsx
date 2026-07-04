@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 import { useState } from 'react';
+=======
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 import './GlobalPresence.css';
 
 // --- INTERFACES & STATIC DATA ---
@@ -7,7 +10,10 @@ interface StoryVideo {
   id: number;
   thumbnail: string;
   logo: string;
+<<<<<<< HEAD
   videoUrl: string;
+=======
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 }
 
 const officeLocations = [
@@ -37,33 +43,52 @@ const storiesData: StoryVideo[] = [
   {
     id: 1,
     thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/thumb-1.jpg',
+<<<<<<< HEAD
     logo: 'https://syspree.com/wp-content/uploads/2024/04/logosyspree.png',
     videoUrl: 'https://player.vimeo.com/video/123456789'
+=======
+    logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   },
   {
     id: 2,
     thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/Story-2.00_00_01_13.Still002.png',
+<<<<<<< HEAD
     logo: 'https://syspree.com/wp-content/uploads/2024/04/logosyspree.png',
     videoUrl: 'https://player.vimeo.com/video/123456789'
+=======
+    logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   },
   {
     id: 3,
     thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/Story-3.00_00_01_25.Still001.png',
+<<<<<<< HEAD
     logo: 'https://syspree.com/wp-content/uploads/2024/04/logosyspree.png',
     videoUrl: 'https://player.vimeo.com/video/123456789'
+=======
+    logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   },
   {
     id: 4,
     thumbnail: 'https://syspree.com/wp-content/uploads/2024/10/thumb-4.jpg',
+<<<<<<< HEAD
     logo: 'https://syspree.com/wp-content/uploads/2024/04/logosyspree.png',
     videoUrl: 'https://player.vimeo.com/video/123456789'
+=======
+    logo: 'https://syspree.com/wp-content/uploads/2023/04/syspree-logo-favicon.png'
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   }
 ];
 
 // --- MAIN UNIFIED COMPONENT ---
 function GlobalPresence() {
+<<<<<<< HEAD
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
+=======
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   return (
     <div className="global-wrapper">
        {/* --- SECTION 2: OUR STORIES (INJECTED MID-WAY CLEANLY) --- */}
@@ -81,20 +106,29 @@ function GlobalPresence() {
                 <div className="story-brand-logo">
                   <img src={story.logo} alt="Syspree" />
                 </div>
+<<<<<<< HEAD
                 <button
                   className="play-button-overlay"
                   aria-label="Play Video"
                   onClick={() => setActiveVideo(story.videoUrl)}
                 >
+=======
+                <button className="play-button-overlay" aria-label="Play Video">
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
                   <svg viewBox="0 0 100 100" className="play-svg">
                     <circle cx="50" cy="50" r="46" stroke="white" strokeWidth="3" fill="none" opacity="0.85" />
                     <polygon points="40,35 70,50 40,65" fill="white" />
                   </svg>
                 </button>
+<<<<<<< HEAD
+=======
+                
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
               </div>
             </div>
           ))}
         </div>
+<<<<<<< HEAD
 
         {activeVideo && (
           <div className="video-overlay" role="dialog" aria-modal="true">
@@ -118,6 +152,8 @@ function GlobalPresence() {
             </div>
           </div>
         )}
+=======
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
       </section>
       {/* --- SECTION 1: GLOBAL MAP PRESENCE --- */}
       <section className="map-section">

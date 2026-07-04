@@ -29,15 +29,23 @@
   margin-left: calc(-50vw + 50%);
   padding: 45px 0;
   height: 400px;
+<<<<<<< HEAD
   overflow: hidden; 
 }
 
+=======
+  overflow: hidden; /* Ensures 4th/5th staging cards remain completely invisible */
+}
+
+/* Viewport anchor holding layout coordinates with 3D Depth perspective */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .cards-viewport {
   position: relative;
   width: 100%;
   max-width: 1400px; 
   height: 100%;
   margin: 0 auto;
+<<<<<<< HEAD
   perspective: 1200px; 
   transform-style: preserve-3d;
 }
@@ -46,6 +54,21 @@
   position: absolute;
   top: 50%;
   left: 50%; 
+=======
+  perspective: 1200px; /* Activates 3D depth calculations */
+  transform-style: preserve-3d;
+}
+
+/* ================================================================= */
+/* SINGLE-SOURCE ANCHOR ENGINE (RESPONSIVE VIEWPORT BOUNDS)           */
+/* ================================================================= */
+.testimonial-card {
+  position: absolute;
+  top: 50%;
+  left: 50%; /* All elements are anchored at center to avoid left/right styling collision */
+  
+  /* Responsive landscape aspect ratio scaled directly to the screen width */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   width: 28vw;
   max-width: 440px;
   min-width: 320px;
@@ -53,6 +76,10 @@
   
   transform-origin: center center;
   
+<<<<<<< HEAD
+=======
+  /* Pure transform animations to handle smooth transitions and z-index ordering */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   transition: transform 0.7s ease-in-out, z-index 0.7s step-end;
   will-change: transform;
 }
@@ -72,40 +99,78 @@
   display: block;
 }
 
+<<<<<<< HEAD
  
 
+=======
+/* ================================================================= */
+/* 3D LAYOUT RULES MATCHING IMAGE_53D29D.JPG                         */
+/* ================================================================= */
+
+/* Center Card: Front-facing, completely flat, topmost layer */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .center-card {
   transform: translate(-50%, -50%) scale(1) rotateY(0deg);
   z-index: 3;
   transition: transform 0.7s ease-in-out, z-index 0s; /* Layer depth shifts forward instantly */
 }
 
+<<<<<<< HEAD
+=======
+/* Left Card: Pushed left relative to viewport, angled backwards on its left edge */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .left-card {
   transform: translate(-50%, -50%) translateX(-31vw) scale(0.85) rotateY(32deg);
   z-index: 1;
 }
 
+<<<<<<< HEAD
+=======
+/* Right Card: Pushed right relative to viewport, angled backwards on its right edge */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .right-card {
   transform: translate(-50%, -50%) translateX(31vw) scale(0.85) rotateY(-32deg);
   z-index: 1;
 }
 
+<<<<<<< HEAD
 
+=======
+/* ================================================================= */
+/* LOOP RECIRCULATION PIPELINE                                        */
+/* ================================================================= */
+
+/* Outgoing target: Sweeps seamlessly off-screen left */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .exit-left {
   transform: translate(-50%, -50%) translateX(-75vw) scale(0.7) rotateY(45deg);
   z-index: 0;
 }
 
+<<<<<<< HEAD
+=======
+/* Incoming target: Glides seamlessly into track from off-screen right */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .enter-right {
   transform: translate(-50%, -50%) translateX(75vw) scale(0.7) rotateY(-45deg);
   z-index: 0;
 }
 
+<<<<<<< HEAD
+=======
+/* Dormant tracking pool */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .hidden-card {
   transform: translate(-50%, -50%) translateX(110vw) scale(0.5);
   z-index: -1;
 }
 
+<<<<<<< HEAD
+=======
+/* ================================================================= */
+/* NAVIGATION INTERFACES                                             */
+/* ================================================================= */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .arrow {
   position: absolute;
   top: 50%;
@@ -125,16 +190,29 @@
 .arrow.left { left: 2%; }
 .arrow.right { right: 2%; }
 
+<<<<<<< HEAD
 
 @media (max-width: 1024px) {
   .testimonial-card {
     width: 38vw;
+=======
+/* ================================================================= */
+/* RESPONSIVE LAYOUT BREAKPOINTS                                     */
+/* ================================================================= */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    width: 38vw; /* Scales card up slightly on smaller viewports to stay legible */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   }
   .left-card { transform: translate(-50%, -50%) translateX(-34vw) scale(0.85) rotateY(30deg); }
   .right-card { transform: translate(-50%, -50%) translateX(34vw) scale(0.85) rotateY(-30deg); }
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
+=======
+  /* Hides side elements on small phones to preserve center focus cleanly */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   .left-card, .right-card, .exit-left, .enter-right {
     display: none !important;
   }

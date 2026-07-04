@@ -4,7 +4,11 @@
   width: 100%;
   max-width: 1680px; 
   margin: 0 auto;
+<<<<<<< HEAD
   padding: 50px 40px; 
+=======
+  padding: 80px 50px; 
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   background-color: transparent;
   overflow: hidden;
 }

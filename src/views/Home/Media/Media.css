@@ -47,11 +47,16 @@
   gap: 40px;
 }
 
+<<<<<<< HEAD
 
+=======
+/* --- CONTAINER ALIGNMENT CORRECTION --- */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 .media-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+<<<<<<< HEAD
 
   align-items: start !important; 
 }
@@ -60,6 +65,17 @@
 .media-card {
   border: 1px solid #e5e5e5;
   padding: 35px 30px;        
+=======
+  
+  /* CRITICAL FIX: Stops cards from stretching vertically to fill the row */
+  align-items: start !important; 
+}
+
+/* --- COMPACT SQUARE CARD LAYOUT --- */
+.media-card {
+  border: 1px solid #e5e5e5;
+  padding: 35px 30px;         /* Adds breathing room to the sides, cuts the top/bottom bloat */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   background: #fff;
   border-radius: 8px;
   
@@ -67,9 +83,15 @@
   flex-direction: column;
   justify-content: flex-start; 
   align-items: flex-start;
+<<<<<<< HEAD
   gap: 16px;                 
   
 
+=======
+  gap: 16px;                  /* Keeps content elements stacked beautifully */
+  
+  /* Natural collapsing height configurations */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   min-height: unset !important;
   height: auto !important;
   
@@ -81,6 +103,7 @@
   box-shadow: 0 15px 30px rgba(0,0,0,.08);
 }
 
+<<<<<<< HEAD
 
 .quote {
   font-size: 56px;           
@@ -91,6 +114,21 @@
 .media-card p {
   font-family: sans-serif;
   font-size: 21px;            
+=======
+/* Tighter, crisp quote mark */
+.quote {
+  font-size: 56px;            /* Scaled down from 70px to stop stretching the card header */
+  color: #ff8800;
+  line-height: 1;
+  margin-bottom: -10px;       /* Gently pulls text block closer to icon */
+}
+
+/* Clean, readable text size matching the mockup */
+.media-card p {
+  font-family: sans-serif;
+  font-size: 21px;            /* Slightly optimized from 24px for great proportional wrapping */
+  line-height: 1.4;
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
   color: #111;
   margin: 0;
 }
@@ -103,9 +141,15 @@
 .media-card img {
   width: auto;
   max-width: 100px;
+<<<<<<< HEAD
   height: 28px;               
   object-fit: contain;
   margin-top: 20px;           
+=======
+  height: 28px;               /* Constrains the height to keep cards horizontally uniform */
+  object-fit: contain;
+  margin-top: 20px;           /* Clean separation from text */
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 }
 
 /* --- RESPONSIVE FIXES --- */

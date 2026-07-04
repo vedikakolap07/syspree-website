@@ -53,7 +53,13 @@ function Home() {
       </div>
       
     </section>
+<<<<<<< HEAD
   
+=======
+    <div>
+      <img src="./assets/wave.png"
+></img>        </div>
+>>>>>>> 9e32617af492f6cfbf8cf658aaaf8160bb49b90e
 </>
   );
 }
